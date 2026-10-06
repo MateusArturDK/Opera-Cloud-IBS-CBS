@@ -12,9 +12,9 @@ Abaixo estão detalhados os problemas enfrentados durante a implementação e as
  ### 1. Ajuste do XML no OFIS (Payload `FEDERAL_TAX`)
 Para que o OPERA conseguisse enviar as informações do novo escopo tributário, foi necessário intervir na estrutura gerada pelo conector local.
   
-  **Ação**: Ajuste no arquivo responsável pela integração e tradução do XML enviado do OPERA Cloud para o parceiro fiscal no OFIS(Oracle Fiscal Integration Service).
+ * **Ação**: Ajuste no arquivo responsável pela integração e tradução do XML enviado do OPERA Cloud para o parceiro fiscal no OFIS(Oracle Fiscal Integration Service).
   
-  **Motivo**: Garantir que o payload de `FEDERAL_TAX` (onde trafegam os dados do IBS/CBS) fosse montado e entregue corretamente na API da Inventti, em conformidade com o   novo schema exigido pela prefeitura.
+ * **Motivo**: Garantir que o payload de `FEDERAL_TAX` (onde trafegam os dados do IBS/CBS) fosse montado e entregue corretamente na API da Inventti, em conformidade com o   novo schema exigido pela prefeitura.
 
 ### 2. Mapeamento de Revenue Buckets (Erro de XSD `IndDest`)
 Durante os testes de checkout, o sistema apresentava o erro de validação: `The element 'IBSCBS' has invalid child element 'IndDest'. List of possible elements expected: 'IndDoacao', 'cIndOp'`.
