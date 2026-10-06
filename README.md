@@ -20,6 +20,6 @@ Durante os testes de checkout, o sistema apresentava o erro de validação: `The
 * **Causa:** O *Revenue Bucket* de Transaction Codes secundários (Taxa de Serviço, Minibar, Restaurante) estava preenchido apenas com `X` ou em branco, quebrando a estrutura de 5 posições obrigatórias do IBS/CBS.
 * **Solução:** Configuração rigorosa da string separada por *pipes* (`|`) nos mapeamentos fiscais do OPERA:
   * **Sintaxe Exigida:** `Código LC 116 | NBS | cIndOp | cClassTrib | Tipo`
-  * **Exemplo Diárias / Serviços (`S`):** `09.01|1.0303.90.00|30101|200048|S`
-  * **Exemplo Taxa de Serviço / Repasse (`X`):** `09.01|1.0303.90.00|30101|200048|X`
-  * **Exemplo F&B / Mercadorias (`G`):** `09.01|1.0303.90.00|30101|200048|G`
+  * **Exemplo Diárias / Serviços (`S`):** `00.00|0.0000.00.00|00000|000000|S`
+  * **Exemplo Taxa de Serviço / Repasse (`X`):** `00.00|0.0000.00.00|00000|000000|X`
+  * **Exemplo F&B / Mercadorias (`G`):** `00.00|0.0000.00.00|00000|000000|G`
