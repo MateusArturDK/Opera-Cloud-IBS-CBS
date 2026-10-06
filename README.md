@@ -3,16 +3,16 @@ Implementação do imposto IBS e CBS para o sistema Opera Cloud
 
 O **IBS** (Imposto sobre Bens e Serviços) e a **CBS** (Contribuição sobre Bens e Serviços) formam o novo IVA Dual (Imposto sobre Valor Agregado). com a obrigatoriedade prevista para, 1º de janeiro de 2027, esse repositório ira demonstrar como configurei esses impostos para o sistema **Opera Cloud Hospitality**.
 
-
+---
 
 Resumo
 
 Abaixo estão detalhados os problemas enfrentados durante a implementação e as respectivas soluções aplicadas, em ordem cronológica de configuração:
 
-  1. Ajuste do XML no OFIS (Payload `FEDERAL_TAX`)
+ ### 1. Ajuste do XML no OFIS (Payload `FEDERAL_TAX`)
 Para que o OPERA conseguisse enviar as informações do novo escopo tributário, foi necessário intervir na estrutura gerada pelo conector local.
-  Ação: Ajuste no arquivo de configuração/XSLT do adaptador OFIS (FLIPTemplateGenericJSON).
-  Motivo: Garantir que o payload de `FEDERAL_TAX` (onde trafegam os dados do IBS/CBS) fosse montado e entregue corretamente na API da Inventti, em conformidade com o   novo schema exigido pela prefeitura.
+  **Ação**: Ajuste no arquivo responsável pela integração e tradução do XML enviado do OPERA Cloud para o parceiro fiscal no OFIS(Oracle Fiscal Integration Service).
+  **Motivo**: Garantir que o payload de `FEDERAL_TAX` (onde trafegam os dados do IBS/CBS) fosse montado e entregue corretamente na API da Inventti, em conformidade com o   novo schema exigido pela prefeitura.
 
 ### 2. Mapeamento de Revenue Buckets (Erro de XSD `IndDest`)
 Durante os testes de checkout, o sistema apresentava o erro de validação: `The element 'IBSCBS' has invalid child element 'IndDest'. List of possible elements expected: 'IndDoacao', 'cIndOp'`.
