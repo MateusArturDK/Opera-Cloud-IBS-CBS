@@ -24,3 +24,9 @@ Durante os testes de checkout, o sistema apresentava o erro de validação: `The
   * **Exemplo Diárias / Serviços (`S`):** `00.00|0.0000.00.00|00000|000000|S`
   * **Exemplo Taxa de Serviço / Repasse (`X`):** `00.00|0.0000.00.00|00000|000000|X`
   * **Exemplo F&B / Mercadorias (`G`):** `00.00|0.0000.00.00|00000|000000|G`
+
+
+### 3. Validação de Cadastro de Hóspedes
+A emissão da nota fiscal eletrônica sob as regras do IBS/CBS tornou-se muito mais restrita quanto aos dados de endereço.
+* **Hóspedes Nacionais (BR):** O preenchimento do campo **Postal Code (CEP)** com os 8 dígitos (ex: `05436020`) é estritamente obrigatório. A ausência de CEP resulta em rejeição imediata da nota.
+* **Hóspedes Estrangeiros:** Identificamos uma limitação no OPERA Cloud onde o campo *State/Province* não exibe lista de valores (LOV) para países fora do eixo US/BR, impedindo a digitação manual. Foi aberto um chamado técnico junto à Oracle para correção do comportamento do formulário.
